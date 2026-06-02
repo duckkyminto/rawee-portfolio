@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rawee Saeharn — UX/UI Designer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+
+  :root {
+    --bg: #F7F5F0; --ink: #1A1814; --ink-2: #5A5650; --ink-3: #9A9690;
+    --accent: #2D5BE3; --accent-light: #EEF2FD;
+    --border: rgba(26,24,20,0.1); --card-bg: #FFFFFF; --tag-bg: #EDEAE4;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+
+
+  /* ── LANDING PAGE ── */
+  .port { font-family: 'DM Sans', sans-serif; color: var(--ink); max-width: 680px; padding: 0 0 3rem; }
+  .l-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0 3rem; border-bottom: 0.5px solid var(--border); }
+  .l-nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+  .l-nav-links { display: flex; gap: 1.5rem; }
+  .l-nav-links a { font-size: 13px; color: var(--ink-2); text-decoration: none; cursor: pointer; }
+  .l-nav-links a:hover { color: var(--ink); }
+  .l-hero { padding: 4rem 0 3.5rem; }
+  .l-hero-role { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.25rem; }
+  .l-hero h1 { font-family: 'DM Serif Display', serif; font-size: 52px; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+  .l-hero h1 em { font-style: italic; color: var(--ink-2); }
+  .l-hero-bio { font-size: 16px; line-height: 1.75; color: var(--ink-2); max-width: 500px; margin-bottom: 2rem; }
+  .l-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .l-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 8px; cursor: pointer; border: 0.5px solid rgba(26,24,20,0.15); background: transparent; color: var(--ink); transition: background 0.15s; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+  .l-btn:hover { background: rgba(26,24,20,0.05); }
+  .l-btn-fill { background: var(--ink); color: var(--bg); border-color: transparent; }
+  .l-btn-fill:hover { opacity: 0.85; background: var(--ink); }
+  .l-section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.5rem; }
+  .l-work { padding: 3rem 0; }
+  .l-work .l-section-label { border-top: 0.5px solid var(--border); padding-top: 1.5rem; }
+  .case-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+  .case-card { background: #fff; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: border 0.15s; border: 0.5px solid var(--border); }
+  .case-card:hover { border-color: rgba(26,24,20,0.35); }
+  .case-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+  .case-tag-l { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .case-icon-l { width: 36px; height: 36px; border-radius: 8px; background: var(--bg); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .case-title-l { font-family: 'DM Serif Display', serif; font-size: 20px; line-height: 1.2; margin-bottom: 0.5rem; color: var(--ink); }
+  .case-desc-l { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 1rem; }
+  .case-footer-l { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .case-meta-l { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill-l { font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--bg); border: 0.5px solid var(--border); color: var(--ink-2); }
+  .case-year-l { font-size: 12px; color: var(--ink-3); }
+  .case-big { grid-column: 1 / -1; }
+  .l-skills { padding: 3rem 0; border-top: 0.5px solid var(--border); }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.5rem; }
+  .skill-group-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.75rem; }
+  .skill-item { font-size: 13px; color: var(--ink-2); margin-bottom: 5px; }
+  .l-about { padding: 3rem 0; border-top: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .l-about-heading { font-family: 'DM Serif Display', serif; font-size: 30px; line-height: 1.25; margin-bottom: 1.25rem; color: var(--ink); }
+  .l-about-body { font-size: 14px; line-height: 1.8; color: var(--ink-2); }
+  .exp-list { display: flex; flex-direction: column; gap: 1rem; }
+  .exp-item { padding-bottom: 1rem; border-bottom: 0.5px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .exp-company { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .exp-role { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .exp-period { font-size: 11px; color: var(--ink-3); margin-top: 2px; }
+  .l-contact { padding: 3rem 0; border-top: 0.5px solid var(--border); text-align: center; }
+  .l-contact-heading { font-family: 'DM Serif Display', serif; font-size: 36px; margin-bottom: 0.75rem; color: var(--ink); }
+  .l-contact-sub { font-size: 14px; color: var(--ink-2); margin-bottom: 2rem; }
+  .l-contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .badge-new { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #e6f4ea; color: #27ae60; margin-left: 8px; vertical-align: middle; }
+
+</style>
+</head>
+<body>
+<div id="page-landing">
+  <div class="wrap">
+    <div class="port">
+      <nav class="l-nav">
+        <span class="l-nav-name">Rawee Saeharn</span>
+        <div class="l-nav-links">
+          <a onclick="document.querySelector('#landing-work').scrollIntoView({behavior:'smooth'})">Work</a>
+          <a onclick="document.querySelector('#landing-about').scrollIntoView({behavior:'smooth'})">About</a>
+          <a onclick="document.querySelector('#landing-contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+        </div>
+      </nav>
+
+      <section class="l-hero">
+        <p class="l-hero-role">UX / UI Designer · Bangkok, Thailand</p>
+        <h1>Designing with <em>purpose,</em><br>clarity &amp; care.</h1>
+        <p class="l-hero-bio">UX/UI Designer with nearly 3 years of experience — translating complex user needs into friendly interfaces through research-driven design, wireframing, prototyping, and scalable design systems.</p>
+        <div class="l-cta">
+          <button class="l-btn l-btn-fill" onclick="document.querySelector('#landing-work').scrollIntoView({behavior:'smooth'})">View my work</button>
+          <a class="l-btn" href="mailto:r.saeharn@gmail.com">Download CV</a>
+        </div>
+      </section>
+
+      <section class="l-work" id="landing-work">
+        <p class="l-section-label">Selected work</p>
+        <div class="case-grid">
+          <div class="case-card case-big" onclick="window.location='travellink-case-study.html'">
+            <div class="case-top">
+              <span class="case-tag-l">Case Study · 01 <span class="badge-new">Current</span></span>
+              <div class="case-icon-l">🗺️</div>
+            </div>
+            <div class="case-title-l">TRAVEL LINK — Tourism Intelligent Data Platform</div>
+            <div class="case-desc-l">Redesigned the full website and built new features including infographic gallery, search &amp; filters, notifications, and admin portal. Architected dynamic registration flows for 3 distinct user types to improve sign-up conversion.</div>
+            <div class="case-footer-l">
+              <div class="case-meta-l">
+                <span class="pill-l">UX Research</span>
+                <span class="pill-l">Design System</span>
+                <span class="pill-l">Figma</span>
+                <span class="pill-l">Prototyping</span>
+              </div>
+              <span class="case-year-l">2023–Present</span>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-tag-l">Case Study · 02</span>
+              <div class="case-icon-l">🌊</div>
+            </div>
+            <div class="case-title-l">Flood.bdi — Emergency Response Platform</div>
+            <div class="case-desc-l">Designed and launched a help-request gathering website during a live flood emergency within 24 hours. Prioritised speed, clarity, and mobile accessibility.</div>
+            <div class="case-footer-l">
+              <div class="case-meta-l">
+                <span class="pill-l">Rapid UX</span>
+                <span class="pill-l">Mobile-first</span>
+              </div>
+              <span class="case-year-l">2023</span>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-tag-l">Case Study · 03</span>
+              <div class="case-icon-l">⚙️</div>
+            </div>
+            <div class="case-title-l">+ Add your next case study</div>
+            <div class="case-desc-l">Personal project, redesign challenge, or freelance work.</div>
+            <div class="case-footer-l">
+              <div class="case-meta-l"><span class="pill-l">Your choice</span></div>
+              <span class="case-year-l">—</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-skills">
+        <p class="l-section-label">Skills &amp; tools</p>
+        <div class="skills-grid">
+          <div>
+            <div class="skill-group-title">Design &amp; Research</div>
+            <div class="skill-item">Wireframing</div>
+            <div class="skill-item">User Journey</div>
+            <div class="skill-item">Prototype</div>
+            <div class="skill-item">Usability Testing</div>
+            <div class="skill-item">Design System</div>
+            <div class="skill-item">Product Design</div>
+          </div>
+          <div>
+            <div class="skill-group-title">Design Tools</div>
+            <div class="skill-item">Figma</div>
+            <div class="skill-item">Miro</div>
+            <div class="skill-item">Adobe Illustrator</div>
+            <div class="skill-item">Useberry</div>
+          </div>
+          <div>
+            <div class="skill-group-title">Analysis &amp; AI</div>
+            <div class="skill-item">Google Analytics</div>
+            <div class="skill-item">Mouseflow</div>
+            <div class="skill-item">Useberry</div>
+            <div class="skill-item">Claude</div>
+            <div class="skill-item">Gemini</div>
+            <div class="skill-item">ChatGPT</div>
+          </div>
+          <div>
+            <div class="skill-group-title">Others</div>
+            <div class="skill-item">HTML / CSS</div>
+            <div class="skill-item">Jira / Notion</div>
+            <div class="skill-item">Data Analysis</div>
+            <div class="skill-item">Infographic</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-about" id="landing-about">
+        <div>
+          <p class="l-section-label">About</p>
+          <h2 class="l-about-heading">Curious by nature, precise by practice.</h2>
+          <p class="l-about-body">I'm Rawee — a UX/UI Designer with nearly 3 years of experience building user-centred products. I'm passionate about delivering impactful experiences under real-world constraints, from large-scale data platforms to emergency-response tools built in a single day.<br><br>Based in Bangkok. Bachelor's in Computer Engineering, KMUTT 2020. Open to new opportunities.</p>
+        </div>
+        <div>
+          <p class="l-section-label">Experience</p>
+          <div class="exp-list">
+            <div class="exp-item">
+              <div class="exp-company">Big Data Institute (BDI)</div>
+              <div class="exp-role">UX/UI Designer</div>
+              <div class="exp-period">June 2023 — Present</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-company">Ginkgo Soft Co., Ltd</div>
+              <div class="exp-role">Marketing</div>
+              <div class="exp-period">Feb 2022 — Mar 2023</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-company">Ginkgo Soft Co., Ltd</div>
+              <div class="exp-role">Presale</div>
+              <div class="exp-period">Jan 2021 — Mar 2022</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-company">King Mongkut's University of Technology Thonburi</div>
+              <div class="exp-role">B.Eng. Computer Engineering</div>
+              <div class="exp-period">2016 — 2020</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-contact" id="landing-contact">
+        <h2 class="l-contact-heading">Let's work together.</h2>
+        <p class="l-contact-sub">Open to full-time and freelance opportunities — feel free to reach out.</p>
+        <div class="l-contact-links">
+          <a class="l-btn" href="mailto:r.saeharn@gmail.com">✉ r.saeharn@gmail.com</a>
+          <a class="l-btn" href="https://www.linkedin.com/in/rawee-saeharn/" target="_blank">in LinkedIn</a>
+          <a class="l-btn" href="#">⬡ Behance</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>
